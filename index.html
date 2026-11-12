@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeyendaGO | Explora los Misterios y Leyendas de Arequipa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --terracota: #C84B31;
+      --terracota-oscuro: #9E3620;
+      --ambar-dorado: #E08E45;
+      --brillo-oro: #F4A261;
+      --crema-sillar: #FAF6F0;
+      --arena-calida: #F0E6D8;
+      --carbon-volcan: #1E1B18;
+      --marron-piedra: #3B332B;
+      --blanco: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--crema-sillar);
+      color: var(--carbon-volcan);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .titulo-epico {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+    }
+
+    /* ENCABEZADO CON LOGO Y NOMBRE DEL EMPRENDIMIENTO */
+    header {
+      background-color: var(--blanco);
+      padding: 12px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid var(--terracota);
+      box-shadow: 0 4px 18px rgba(30, 27, 24, 0.08);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-img {
+      height: 54px;
+      width: auto;
+      display: block;
+      mix-blend-mode: multiply;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    nav a {
+      color: var(--carbon-volcan);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--terracota);
+    }
+
+    .nav-cta {
+      background-color: var(--terracota);
+      color: var(--blanco) !important;
+      padding: 9px 18px;
+      border-radius: 8px;
+    }
+
+    .nav-cta:hover {
+      background-color: var(--terracota-oscuro);
+    }
+
+    /* PORTADA HERO CON IMAGEN DE GRUPO DE AMIGOS / FAMILIA USANDO LA APP */
+    .hero {
+      background: radial-gradient(circle at top right, #FFFDF9 0%, var(--arena-calida) 65%, #E6D5C1 100%);
+      padding: 65px 6% 80px;
+      border-bottom: 1px solid #DFD2C2;
+    }
+
+    .hero-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--terracota);
+      color: var(--blanco);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 10px rgba(200, 75, 49, 0.25);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      color: var(--carbon-volcan);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: var(--terracota);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--marron-piedra);
+      margin-bottom: 22px;
+    }
+
+    /* CAJA DE PROPUESTA DE VALOR */
+    .propuesta-valor-box {
+      background-color: var(--blanco);
+      border-left: 6px solid var(--terracota);
+      padding: 18px 22px;
+      border-radius: 0 14px 14px 0;
+      box-shadow: 0 10px 25px rgba(59, 51, 43, 0.08);
+      margin-bottom: 28px;
+    }
+
+    .propuesta-valor-box strong {
+      color: var(--terracota);
+      display: block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 5px;
+    }
+
+    .propuesta-valor-box p {
+      font-size: 0.95rem;
+      color: var(--carbon-volcan);
+      font-weight: 500;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--terracota) 0%, #D95B38 100%);
+      color: var(--blanco);
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(200, 75, 49, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(200, 75, 49, 0.4);
+    }
+
+    .btn-secondary {
+      background-color: var(--blanco);
+      color: var(--carbon-volcan);
+      border: 2px solid var(--carbon-volcan);
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--carbon-volcan);
+      color: var(--blanco);
+    }
+
+    /* MARCO FOTOGRÁFICO HERO: GRUPO USANDO LA APP */
+    .hero-media-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 22px 45px rgba(30, 27, 24, 0.18);
+      border: 4px solid var(--blanco);
+      background-color: var(--carbon-volcan);
+    }
+
+    .hero-media-card img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-floating-badge {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      right: 18px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 14px 18px;
+      border-radius: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .hero-floating-badge div strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--carbon-volcan);
+    }
+
+    .hero-floating-badge div span {
+      font-size: 0.8rem;
+      color: var(--terracota);
+      font-weight: 600;
+    }
+
+    .pill-qr {
+      background-color: var(--terracota);
+      color: var(--blanco);
+      padding: 6px 12px;
+      border-radius: 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    /* SECCIÓN: ¿CÓMO FUNCIONA LA AVENTURA? */
+    .pasos-section {
+      padding: 75px 6%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+    }
+
+    .section-tag {
+      color: var(--terracota);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--carbon-volcan);
+      margin-bottom: 12px;
+    }
+
+    .pasos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .paso-card {
+      background: var(--blanco);
+      padding: 28px 22px;
+      border-radius: 18px;
+      border-bottom: 4px solid var(--ambar-dorado);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .paso-card:hover {
+      transform: translateY(-5px);
+      border-bottom-color: var(--terracota);
+    }
+
+    .paso-num {
+      width: 46px;
+      height: 46px;
+      background: linear-gradient(135deg, var(--terracota), var(--ambar-dorado));
+      color: var(--blanco);
+      font-weight: 800;
+      font-size: 1.2rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .paso-card h3 {
+      font-size: 1.12rem;
+      margin-bottom: 10px;
+      color: var(--carbon-volcan);
+    }
+
+    .paso-card p {
+      font-size: 0.9rem;
+      color: var(--marron-piedra);
+    }
+
+    /* SECCIÓN: GUARDIANES COLECCIONABLES */
+    .guardianes-section {
+      background-color: var(--carbon-volcan);
+      color: var(--blanco);
+      padding: 75px 6%;
+    }
+
+    .guardianes-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .guardianes-section .section-title {
+      color: var(--brillo-oro);
+    }
+
+    .guardianes-section .section-header p {
+      color: #D6CFC7;
+    }
+
+    .guardianes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .guardian-card {
+      background: linear-gradient(180deg, #2C2621 0%, #221D19 100%);
+      border: 1px solid #4A3F35;
+      border-radius: 18px;
+      padding: 28px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .guardian-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--brillo-oro);
+    }
+
+    .rareza {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .rareza-comun { background: rgba(224, 142, 69, 0.2); color: var(--brillo-oro); border: 1px solid var(--brillo-oro); }
+    .rareza-raro { background: rgba(200, 75, 49, 0.25); color: #FF8A70; border: 1px solid #FF8A70; }
+    .rareza-legendario { background: linear-gradient(90deg, #C84B31, #E08E45); color: #FFF; }
+
+    .guardian-icon {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .guardian-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: var(--blanco);
+    }
+
+    .guardian-ubicacion {
+      font-size: 0.82rem;
+      color: var(--brillo-oro);
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .guardian-card p {
+      font-size: 0.92rem;
+      color: #CFC7BE;
+    }
+
+    /* CATÁLOGO DE 3 PRODUCTOS / SERVICIOS */
+    .catalogo {
+      padding: 80px 6%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .card {
+      background: var(--blanco);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(30, 27, 24, 0.08);
+      border: 1px solid #EAE0D5;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 36px rgba(200, 75, 49, 0.15);
+    }
+
+    .card-destacada {
+      border: 2.5px solid var(--terracota);
+      position: relative;
+    }
+
+    .cinta-popular {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--terracota);
+      color: var(--blanco);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .card img {
+      width: 100%;
+      height: 225px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 26px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--terracota);
+      margin-bottom: 6px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      color: var(--carbon-volcan);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.93rem;
+      color: var(--marron-piedra);
+      margin-bottom: 18px;
+    }
+
+    .card-lista {
+      list-style: none;
+      margin-bottom: 20px;
+      font-size: 0.88rem;
+      color: var(--carbon-volcan);
+    }
+
+    .card-lista li {
+      margin-bottom: 6px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .card-lista li::before {
+      content: "✓";
+      color: var(--terracota);
+      font-weight: 800;
+      position: absolute;
+      left: 0;
+    }
+
+    /* CORRECCIÓN DEL PIE DE TARJETA PARA QUE EL PRECIO Y BOTÓN NUNCA SE ROMPAN */
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid #EFE6DC;
+    }
+
+    .price {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--terracota);
+      white-space: nowrap;
+    }
+
+    .btn-card {
+      background-color: var(--carbon-volcan);
+      color: var(--blanco);
+      padding: 10px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background 0.3s;
+    }
+
+    .btn-card:hover {
+      background-color: var(--terracota);
+    }
+
+    /* BANNER APP MÓVIL */
+    .app-banner {
+      background: linear-gradient(135deg, var(--terracota) 0%, #A93820 100%);
+      color: var(--blanco);
+      margin: 0 6% 75px;
+      border-radius: 24px;
+      padding: 45px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      box-shadow: 0 15px 35px rgba(200, 75, 49, 0.25);
+    }
+
+    .app-banner h2 {
+      font-size: 1.9rem;
+      margin-bottom: 10px;
+    }
+
+    .app-banner p {
+      max-width: 620px;
+      color: #FDECE8;
+      font-size: 1rem;
+    }
+
+    .btn-blanco {
+      background-color: var(--blanco);
+      color: var(--terracota);
+      padding: 15px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      white-space: nowrap;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.2s;
+    }
+
+    .btn-blanco:hover {
+      transform: scale(1.04);
+    }
+
+    /* CONTACTO Y LLAMADO A LA ACCIÓN */
+    .contacto {
+      background-color: var(--arena-calida);
+      border-top: 2px solid #E2D3C1;
+      padding: 75px 6%;
+    }
+
+    .contacto-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .contacto-info h2 {
+      font-size: 2.2rem;
+      color: var(--carbon-volcan);
+      margin-bottom: 14px;
+    }
+
+    .contacto-info p {
+      color: var(--marron-piedra);
+      margin-bottom: 24px;
+    }
+
+    .dato-contacto {
+      background: var(--blanco);
+      padding: 15px 20px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      border-left: 4px solid var(--terracota);
+      font-size: 0.95rem;
+    }
+
+    .form-box {
+      background: var(--blanco);
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(30, 27, 24, 0.08);
+      border: 1px solid #E5D7C6;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: var(--carbon-volcan);
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #D8CBB8;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      background-color: #FFFDFB;
+    }
+
+    .form-group input:focus, .form-group select:focus {
+      outline: none;
+      border-color: var(--terracota);
+    }
+
+    .alerta-exito {
+      display: none;
+      margin-top: 16px;
+      padding: 14px;
+      background-color: #E6F4EA;
+      color: #137333;
+      border: 1px solid #CEEAD6;
+      border-radius: 10px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    footer {
+      background-color: var(--carbon-volcan);
+      color: #D0C7BD;
+      text-align: center;
+      padding: 28px 6%;
+      font-size: 0.9rem;
+    }
+
+    footer strong {
+      color: var(--brillo-oro);
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid, .contacto-grid { grid-template-columns: 1fr; }
+      .pasos-grid { grid-template-columns: repeat(2, 1fr); }
+      .guardianes-grid, .cards-grid { grid-template-columns: 1fr; }
+      .app-banner { flex-direction: column; text-align: center; padding: 35px 25px; }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.1rem; }
+      .pasos-grid { grid-template-columns: 1fr; }
+      nav a:not(.nav-cta) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ENCABEZADO: LOGO Y NOMBRE DEL EMPRENDIMIENTO -->
+  <header>
+    <a href="#" class="logo-container">
+      <img src="LeyendaGo Imagotipo.png" alt="LeyendaGo Imagotipo" class="logo-img">
+    </a>
+    <nav>
+      <a href="#como-funciona">¿Cómo funciona?</a>
+      <a href="#guardianes">Guardianes</a>
+      <a href="#catalogo">Rutas y Kits</a>
+      <a href="#contacto" class="nav-cta">Reservar Pase</a>
+    </nav>
+  </header>
+
+  <!-- PORTADA HERO CON IMAGEN DE GRUPO DE AMIGOS / FAMILIA USANDO LA APP -->
+  <section class="hero" id="inicio">
+    <div class="hero-grid">
+      <div>
+        <span class="badge">🔥 Arequipa • Turismo Cultural Gamificado</span>
+        <h1>Descubre los misterios ocultos de tu ciudad <span class="titulo-epico">JUGANDO</span></h1>
+        <p class="hero-desc">
+          <strong>LeyendaGO</strong> convierte las calles históricas, callejones y miradores de Arequipa en una búsqueda del tesoro interactiva. Recorre rutas temáticas, escanea códigos QR secretos y desbloquea guardianes místicos.
+        </p>
+
+        <div class="propuesta-valor-box">
+          <strong>Nuestra Propuesta de Valor</strong>
+          <p>
+            Ayudamos a jóvenes y familias locales a redescubrir las leyendas y rincones históricos de su distrito de forma entretenida y económica mediante una app móvil gamificada con códigos QR y personajes coleccionables, para convertir un paseo tradicional en una aventura interactiva con recompensas en comercios locales.
+          </p>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#catalogo" class="btn-primary">Ver Rutas y Precios</a>
+          <a href="#como-funciona" class="btn-secondary">¿Cómo se juega?</a>
+        </div>
+      </div>
+
+      <!-- IMAGEN HERO DE GRUPO DE AMIGOS / FAMILIA USANDO LA APP (Guárdala como hero-app.png) -->
+      <div class="hero-media-card">
+        <img src="hero-app.png" alt="Grupo de amigos explorando Arequipa con la app LeyendaGO" onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80'">
+        <div class="hero-floating-badge">
+          <div>
+            <strong>Ruta Piloto: Yanahuara &amp; Centro</strong>
+            <span>Escanea QR • Colecciona • Gana Cupones</span>
+          </div>
+          <span class="pill-qr">📲 App Android</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: ¿CÓMO FUNCIONA? -->
+  <section class="pasos-section" id="como-funciona">
+    <div class="section-header">
+      <span class="section-tag">Dinámica del Juego</span>
+      <h2 class="section-title">Tu aventura en 4 simples pasos</h2>
+      <p>No necesitas guía turístico costoso ni horarios rígidos; solo tu celular y ganas de explorar.</p>
+    </div>
+
+    <div class="pasos-grid">
+      <div class="paso-card">
+        <div class="paso-num">1</div>
+        <h3>Elige tu Ruta</h3>
+        <p>Reserva tu pase individual, grupal o prueba gratis nuestra primera parada desde la web o la app móvil.</p>
+      </div>
+      <div class="paso-card">
+        <div class="paso-num">2</div>
+        <h3>Sigue las Pistas</h3>
+        <p>Usa el mapa de la app LeyendaGO para caminar hacia los puntos históricos y comercios aliados del barrio.</p>
+      </div>
+      <div class="paso-card">
+        <div class="paso-num">3</div>
+        <h3>Escanea el QR</h3>
+        <p>Encuentra la placa secreta con código QR, escanéala desde la app y desbloquea la leyenda oculta.</p>
+      </div>
+      <div class="paso-card">
+        <div class="paso-num">4</div>
+        <h3>Colecciona y Gana</h3>
+        <p>Captura la carta del Guardián local y canjea cupones de descuento en heladerías y cafés aliados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: GUARDIANES COLECCIONABLES -->
+  <section class="guardianes-section" id="guardianes">
+    <div class="guardianes-container">
+      <div class="section-header">
+        <span class="section-tag">Bestiario Cultural</span>
+        <h2 class="section-title">Guardianes Coleccionables</h2>
+        <p>Cada código QR esconde una llave interna que desbloquea a un personaje inspirado en las tradiciones de Arequipa.</p>
+      </div>
+
+      <div class="guardianes-grid">
+        <div class="guardian-card">
+          <span class="rareza rareza-comun">Guardián Común</span>
+          <span class="guardian-icon">🗿</span>
+          <h3>El Duende del Sillar</h3>
+          <span class="guardian-ubicacion">📍 Parada 1: Mirador y Arcos de Yanahuara</span>
+          <p>Un espíritu travieso tallado en piedra volcánica blanca que guarda los versos olvidados y secretos de los antiguos canteros arequipeños.</p>
+        </div>
+
+        <div class="guardian-card">
+          <span class="rareza rareza-raro">Guardián Raro</span>
+          <span class="guardian-icon">🕯️</span>
+          <h3>La Dama del Callejón</h3>
+          <span class="guardian-ubicacion">📍 Parada 2: Callejón del Cabildo</span>
+          <p>Figura misteriosa de las noches coloniales. Solo aparece si resuelves su acertijo histórico frente a las casonas antiguas del barrio.</p>
+        </div>
+
+        <div class="guardian-card">
+          <span class="rareza rareza-legendario">Guardián Legendario</span>
+          <span class="guardian-icon">🌋</span>
+          <h3>El Vigía del Misti</h3>
+          <span class="guardian-ubicacion">📍 Parada Final: Comercio Aliado</span>
+          <p>El jefe final de la ruta. Al desbloquearlo completas tu pasaporte digital y obtienes un cupón 2x1 en queso helado artesanal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: CATÁLOGO DE 3 PRODUCTOS / SERVICIOS CON IMÁGENES REFERENCIALES -->
+  <section class="catalogo" id="catalogo">
+    <div class="section-header">
+      <span class="section-tag">Tienda Oficial</span>
+      <h2 class="section-title">Catálogo de Experiencias y Kits</h2>
+      <p>Elige tu pase de explorador con precios accesibles para estudiantes y familias</p>
+    </div>
+
+    <div class="cards-grid">
+      <!-- PRODUCTO 1 (Guarda tu imagen generada como producto1.png) -->
+      <article class="card">
+        <img src="producto1.png" alt="Pase Individual Ruta Misterios de Yanahuara" onerror="this.src='https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=800&q=80'">
+        <div class="card-body">
+          <div>
+            <div class="card-tag">Pase Digital Individual</div>
+            <h3>Ruta Misterios de Yanahuara</h3>
+            <p>Ideal para exploradores solitarios que quieren vivir la experiencia completa en su celular.</p>
+            <ul class="card-lista">
+              <li>Acceso a las 3 paradas secretas con QR</li>
+              <li>Desbloqueo de 3 Guardianes digitales</li>
+              <li>1 cupón de descuento en heladería aliada</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <span class="price">S/ 5.00</span>
+            <a href="#contacto" class="btn-card">Solicitar Pase</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 2 (Guarda tu imagen generada como producto2.png) -->
+      <article class="card card-destacada">
+        <span class="cinta-popular">Más Elegido</span>
+        <img src="producto2.png" alt="Pack Escuadrón Explorador 3 Personas" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80'">
+        <div class="card-body">
+          <div>
+            <div class="card-tag">Pack Grupal (3 Personas)</div>
+            <h3>Escuadrón Explorador</h3>
+            <p>El plan perfecto para salir con amigos o familia el fin de semana compitiendo por puntos.</p>
+            <ul class="card-lista">
+              <li>3 accesos completos a la Ruta Yanahuara</li>
+              <li>Modo reto contrarreloj en equipo</li>
+              <li>3 cupones en cafeterías y dulces típicos</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <span class="price">S/ 12.00</span>
+            <a href="#contacto" class="btn-card">Solicitar Pack</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 3 (Guarda tu imagen generada como producto3.png) -->
+      <article class="card">
+        <img src="producto3.png" alt="Kit Físico Pasaporte Cultural y Stickers" onerror="this.src='https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80'">
+        <div class="card-body">
+          <div>
+            <div class="card-tag">Producto Coleccionable</div>
+            <h3>Kit Físico: Pasaporte + Stickers</h3>
+            <p>Lleva el recuerdo físico de tu aventura cultural por las calles tradicionales de Arequipa.</p>
+            <ul class="card-lista">
+              <li>Libreta impresa tipo Pasaporte Cultural</li>
+              <li>Espacio para sellos de comercios aliados</li>
+              <li>4 stickers holográficos de los Guardianes</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <span class="price">S/ 8.00</span>
+            <a href="#contacto" class="btn-card">Pedir Kit</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- BANNER APP MÓVIL -->
+  <div class="app-banner">
+    <div>
+      <h2>📱 ¿Ya tienes nuestra App Móvil Android?</h2>
+      <p>Nuestra aplicación desarrollada en MIT App Inventor es el centro de la aventura: incluye el escáner QR oficial, el catálogo de rutas y el registro instantáneo de exploradores.</p>
+    </div>
+    <a href="#contacto" class="btn-blanco">Solicitar Acceso APK</a>
+  </div>
+
+  <!-- CONTACTO Y LLAMADO A LA ACCIÓN -->
+  <section class="contacto" id="contacto">
+    <div class="contacto-grid">
+      <div class="contacto-info">
+        <span class="section-tag">Únete a la Expedición</span>
+        <h2>Reserva tu pase o afilia tu negocio</h2>
+        <p>Completa el formulario de prueba para recibir tu código de explorador o contáctanos si tienes una cafetería, heladería o tienda local.</p>
+
+        <div class="dato-contacto">
+          <strong>📍 Zona Piloto:</strong> Distrito de Yanahuara y Cercado, Arequipa - Perú.
+        </div>
+        <div class="dato-contacto">
+          <strong>🕒 Horario de Rutas:</strong> Lunes a Domingo de 9:00 a.m. a 7:00 p.m.
+        </div>
+        <div class="dato-contacto">
+          <strong>🎓 Proyecto Escolar:</strong> Educación para el Trabajo (5.º de Secundaria).
+        </div>
+      </div>
+
+      <div class="form-box">
+        <form id="reservaForm" onsubmit="enviarDemo(event)">
+          <div class="form-group">
+            <label for="nombre">Nombre del Explorador:</label>
+            <input type="text" id="nombre" placeholder="Ej. Mateo Quispe" required>
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo o WhatsApp de contacto:</label>
+            <input type="text" id="correo" placeholder="Ej. 987654321 o mateo@correo.com" required>
+          </div>
+          <div class="form-group">
+            <label for="producto">Experiencia o Kit de interés:</label>
+            <select id="producto">
+              <option value="Ruta Misterios de Yanahuara - S/ 5.00">Ruta Misterios de Yanahuara (S/ 5.00)</option>
+              <option value="Pack Escuadrón Explorador - S/ 12.00">Pack Escuadrón Explorador x3 (S/ 12.00)</option>
+              <option value="Kit Físico Pasaporte + Stickers - S/ 8.00">Kit Físico: Pasaporte + Stickers (S/ 8.00)</option>
+              <option value="Demo Gratuita 1 Parada - S/ 0.00">Demo Gratuita - 1 Parada de Prueba (S/ 0.00)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%;">Registrar Solicitud de Prueba</button>
+          <div id="mensajeExito" class="alerta-exito">
+            ¡Solicitud registrada con éxito! Abre tu app móvil LeyendaGO para comenzar la exploración.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 <strong>LeyendaGO</strong> — Proyecto de Emprendimiento Digital (EPT - 5.º C de Secundaria, Arequipa, Perú).</p>
+  </footer>
+
+  <script>
+    function enviarDemo(e) {
+      e.preventDefault();
+      document.getElementById('mensajeExito').style.display = 'block';
+      document.getElementById('reservaForm').reset();
+    }
+  </script>
+</body>
+</html>
